@@ -1,8 +1,71 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+}
+
+aside.sideBar {
+  flex: 1;
+}
+
+section.burger {
+  flex: 3;
+}
+
+aside.cart {
+  flex: 1.5;
+}
+
+
+/* 다른거 먹자 */
+
+aside.sideBar {
+  margin: 0px 20px;
+}
+
+section.sideBar_content {
+  background-color: pink;
+  border: 1px solid none;
+  border-radius: 8px;
+}
+
+
+
+/* 햄버거 메뉴 */
+
+section.burger {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* 줄바꿈 */
+  gap: 20px;
+}
+
+article.burger__card {
+  display: flex;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 45%;
+}
+
+article.burger__card > img {
+  width: 150px;
+}
+
+
+
+/* 장바구니 */
+
+aside.cart {
+  margin: 0px 5px;
+}
+
+div.cart__content {
+  background-color: pink;
+  border: 1px solid none;
+  border-radius: 8px;
 }
