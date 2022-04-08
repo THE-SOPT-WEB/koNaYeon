@@ -20,17 +20,51 @@ aside.cart {
   flex: 1.5;
 }
 
+/* menubar */
+header {
+  background-color: lightcoral;
+  margin-bottom: 20px;
+  padding: 10px 0px;
+}
+
+header > h1 {
+  text-align: center;
+}
+
 
 /* 다른거 먹자 */
 
 aside.sideBar {
-  margin: 0px 20px;
+  margin: 0px 30px;
+  width: 100%;
 }
 
 section.sideBar_content {
   background-color: pink;
-  border: 1px solid none;
   border-radius: 8px;
+  padding: 15px;
+  width: 80%;
+}
+
+h3.sideBar__option {
+  margin-bottom: 20px;
+}
+
+section.sideBar_content > p {
+  display: block;
+  margin: 10px 0px;
+  padding: 5px 10px;
+  font-size: small;
+  font-weight: bolder;
+  border-radius: 8px;
+}
+
+p.mcdonalds {
+  background-color: lightcoral;
+}
+
+p.burgerking {
+  background-color: antiquewhite;
 }
 
 
@@ -47,25 +81,49 @@ section.burger {
 article.burger__card {
   display: flex;
   background-color: white;
-  border: 1px solid black;
+  border: 2px solid lightgray;
   border-radius: 8px;
   width: 45%;
+  box-shadow: 5px 5px 5px lightgray;
+  margin-bottom: 20px;
 }
 
 article.burger__card > img {
   width: 150px;
 }
 
+article.burger__card > div {
+  text-align: center;
+  padding-top: 20px;
+}
 
 
 /* 장바구니 */
 
-aside.cart {
-  margin: 0px 5px;
+section.cart__content {
+  padding: 15px;
+  background-color: pink;
+  border-radius: 8px;
+  position: fixed;
+  width: 350px;
 }
 
-div.cart__content {
-  background-color: pink;
-  border: 1px solid none;
-  border-radius: 8px;
+div.cart__execution {
+  text-align: center;
+  margin-top: 15px;
+}
+
+div.cart__execution > button {
+  background-color: antiquewhite;
+  border-radius: 15px;
+  padding: 5px 10px;
+  border: none;
+  font-weight: bolder;
+  color: dimgrey;
+}
+
+hr{
+  background-color: white;
+  border: none;
+  height: 2px;
 }
