@@ -132,3 +132,18 @@ hr{
   border: none;
   height: 2px;
 }
+
+
+/* 미디어 쿼리 */
+
+@media all and (max-width: 1024px){
+	section.sideBar_content > p {
+    width: 40px;
+  }
+}
+@media all and (max-width: 768px){
+  
+	article.burger__card{
+    width: 100%;
+  }
+}
