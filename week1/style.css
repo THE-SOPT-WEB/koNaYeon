@@ -88,6 +88,11 @@ article.burger__card {
   margin-bottom: 20px;
 }
 
+article.burger__card:hover {
+  background-color: rgb(239, 95, 95);
+  color: whitesmoke;
+}
+
 article.burger__card > img {
   width: 150px;
 }
