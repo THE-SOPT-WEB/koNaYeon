@@ -39,17 +39,38 @@ function initGame({ score, answer, image }) {
   image.src = quizList[currentStep].src;
 }
 
-function showModal(modalContent) {
+function showModal(modalContent, keepOpen) {
   const modal = $('.modal');
   const modalBody = $('p.modal__body');
-  modalBody.innerText = modalContent;
+  modalBody.innerHTML = modalContent;
 
   modal.classList.remove('hide');
 
+  if (keepOpen) return;
+
   setTimeout(() => {
     modal.classList.add('hide');
-  }, 1500);
+  }, 500);
 }
+
+function goNextStep(score, image) {
+  /*
+    1. 점수 올리기
+    2. 이미지 바꿔주기
+  */
+  currentStep++;
+  score.innerText = +score.innerText + 1;
+
+  if (currentStep === quizList.length) {
+    // 게임이 끝난 상태
+    showModal(`
+      <a href="/">🧡 추억팔이 성공 🧡</a>
+    `, true);
+    return;
+  }
+  image.src = quizList[currentStep].src;
+}
+
 
 // event 생성
 function attachEvent({ score, answer, image }) {
@@ -60,6 +81,7 @@ function attachEvent({ score, answer, image }) {
       if (currentAnswer === realAnswer) {
         // 정답
         showModal('올..정답😏');
+        goNextStep(score, image);
       } else {
         // 오답
         showModal(`${currentAnswer}라니..😨 몇년생이시죠..?`);
