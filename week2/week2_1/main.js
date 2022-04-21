@@ -33,34 +33,39 @@ const quizList = [
 
 // game 초기화
 function initGame({ score, answer, image }) {
+
   currentStep = 0;
   score.innerText = 0;
-
   image.src = quizList[currentStep].src;
+  
 }
 
 function showModal(modalContent, keepOpen) {
   const modal = $('.modal');
   const modalBody = $('p.modal__body');
+  
   modalBody.innerHTML = modalContent;
 
   modal.classList.remove('hide');
 
   if (keepOpen) return;
-
+  
   setTimeout(() => {
     modal.classList.add('hide');
-  }, 500);
+  }, 1000);
+  
 }
 
 function goNextStep(score, image) {
+
   /*
     1. 점수 올리기
     2. 이미지 바꿔주기
   */
+ 
   currentStep++;
   score.innerText = +score.innerText + 1;
-
+ 
   if (currentStep === quizList.length) {
     // 게임이 끝난 상태
     showModal(`
@@ -69,18 +74,21 @@ function goNextStep(score, image) {
     return;
   }
   image.src = quizList[currentStep].src;
+
+  
 }
 
 
 // event 생성
-function attachEvent({ score, answer, image }) {
+function attachEvent({ score, answer, image, replay }) {
   answer.addEventListener('click', (e) => {
     if (e.target instanceof HTMLElement) {
       const currentAnswer = e.target.innerText;
       const realAnswer = quizList[currentStep].answer;
+    
       if (currentAnswer === realAnswer) {
         // 정답
-        showModal('올..정답😏');
+        //showModal('올..정답😏');
         goNextStep(score, image);
       } else {
         // 오답
@@ -94,6 +102,15 @@ function attachEvent({ score, answer, image }) {
     
     
     });
+
+    // game 다시하기
+    replay.addEventListener('click', (e) => {
+      
+      currentStep = 0;
+      score.innerText = 0;
+      image.src = quizList[currentStep].src;
+
+    });
 }
 
 function gameManager(gameInfo) {
@@ -106,5 +123,6 @@ window.onload = () => {
     score: $('.scoreBoard__score'),
     answer: $('ul.answer__list'),
     image: $('.imageBoard > img'),
+    replay: $('.buttonList__shuffle'),
   });
 }
