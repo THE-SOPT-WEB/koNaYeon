@@ -31,4 +31,49 @@ const quizList = [
   },
 ];
 
+// game 초기화
+function initGame({ score, answer, image }) {
+  currentStep = 0;
+  score.innerText = 0;
 
+  image.src = quizList[currentStep].src;
+}
+
+function showModal() {
+  const modal = $('.modal');
+  modal.classList.remove('hide');
+}
+
+// event 생성
+function attachEvent({ score, answer, image }) {
+  answer.addEventListener('click', (e) => {
+    if (e.target instanceof HTMLElement) {
+      const currentAnswer = e.target.innerText;
+      const realAnswer = quizList[currentStep].answer;
+      if (currentAnswer === realAnswer) {
+        showModal();
+      } else {
+        
+      }
+    }
+    
+    // if (e.target.closest('.answer__list > li')) {
+    // closest에 의해 가장 가까운 li 반환 (다른 곳을 누르면 null)
+    // }
+    
+    
+    });
+}
+
+function gameManager(gameInfo) {
+  initGame(gameInfo);
+  attachEvent(gameInfo);
+}
+
+window.onload = () => {
+  gameManager({
+    score: $('.scoreBoard__score'),
+    answer: $('ul.answer__list'),
+    image: $('.imageBoard > img'),
+  });
+}
