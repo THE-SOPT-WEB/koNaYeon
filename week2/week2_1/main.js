@@ -39,9 +39,16 @@ function initGame({ score, answer, image }) {
   image.src = quizList[currentStep].src;
 }
 
-function showModal() {
+function showModal(modalContent) {
   const modal = $('.modal');
+  const modalBody = $('p.modal__body');
+  modalBody.innerText = modalContent;
+
   modal.classList.remove('hide');
+
+  setTimeout(() => {
+    modal.classList.add('hide');
+  }, 1500);
 }
 
 // event 생성
@@ -51,9 +58,11 @@ function attachEvent({ score, answer, image }) {
       const currentAnswer = e.target.innerText;
       const realAnswer = quizList[currentStep].answer;
       if (currentAnswer === realAnswer) {
-        showModal();
+        // 정답
+        showModal('올..정답😏');
       } else {
-        
+        // 오답
+        showModal(`${currentAnswer}라니..😨 몇년생이시죠..?`);
       }
     }
     
