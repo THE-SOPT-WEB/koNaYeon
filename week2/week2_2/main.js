@@ -4,9 +4,8 @@ const $ = (selector) => document.querySelector(selector);
 
 const Cart =  $ ('section.cart__shopping'); // 장바구니 title
 const burgerCardAll = document.querySelectorAll('article.burger__card'); //버거 카드
-const burgerPrice = $ ('div.burger__price'); // 버거 가격
-const burgerCancle = $ ("button.cancle"); // X버튼 
-const burgerName = $ ('span.burger__name'); // 버거 이름
+const order = $ ('button.cart__order');
+const cancle = $ ('button.cart__cancle');
 
 
 burgerCardAll.forEach(function(e) {
@@ -15,110 +14,80 @@ burgerCardAll.forEach(function(e) {
 
 function logEvent(event) {
 	event.stopPropagation();
+
 	//console.log(event.currentTarget); // 이렇게 하면 모든 내용이 나옴
   const currentPick = event.currentTarget;
-  console.log(currentPick);
+  // console.log(currentPick);
   const name = currentPick.querySelector('span.burger__name').innerText;
   const price = currentPick.querySelector('div.burger__price').innerText;
-  console.log(name);
-  console.log(price);
+  // console.log(name);
+  // console.log(price);
 
+
+
+
+  //버거이름, 수량, 가격 삭제버튼
+  //버거 가져오기
 
   const li = document.createElement("li");
   const span = document.createElement("span");
-  span.innerText = name; // crrent로 바꾸기
+  span.innerText = name;
 
   const div = document.createElement("div");
-  div.innerText = price; // crrent로 바꾸기
+  div.innerText = price;
+
   const button = document.createElement("button");
   
 
+  // 각 장바구니에 담은 상품 삭제 버튼
   button.innerText = "X";
   button.onclick = () => {
     li.remove();
   }
+
+
 
   li.appendChild(span);
   li.appendChild(div);
   li.appendChild(button);
   Cart.appendChild(li);
   console.log(Cart);
-  return li;
+  
 };
 
+function showModal(modalContent, keepOpen) {
+  const modal = $('.modal');
+  const modalBody = $('p.modal__body');
+  const modalButton = $('button.modalNo');
+  modalBody.innerHTML = modalContent;
 
-
-//버거이름, 수량, 가격 삭제버튼
-//버거 가져오기
-
-function makeBuy() {
-  const li =  logEvent();
-
-  /*
-  //e = logEvent();
-  const li = document.createElement("li");
-  const span = document.createElement("span");
-  span.innerText = burgerName; // crrent로 바꾸기
-
-  const div = document.createElement("div");
-  div.innerText = burgerPrice; // crrent로 바꾸기
-*/
-  // 각 장바구니에 담은 상품 삭제 버튼
-  const button = document.createElement("button");
-  button.innerText = "X";
-  button.onclick = () => {
-    li.remove();
-    }
-
-  li.appendChild(span);
-  li.appendChild(div);
-  li.appendChild(button);
-
-  return li;
-
+  modal.classList.remove('hide');
+  //`**예**`를 누르면 `**a**` 태그를 사용해서 완료 페이지로 이동해주세요. 
+  // `**아니오**`를 누르면 모달을 다시 닫아주세요.
+  modalButton.onclick = () => {
+    modal.classList.add('hide');
+  }
+  /*if (keepOpen) return;
+  
+  setTimeout(() => {
+    modal.classList.add('hide');
+  }, 1000);
+  */
 }
 
-/* 아 여기 일단 주석처리
-burgerCardAll.addEventListener('click', () => {
-  const li =  logEvent();
-  Cart.appendChild( logEvent());
-});
-*/
+// 주문하기
+order.onclick = function (event) {
+  showModal('🍔 정말 주문하시겠어요? 🍔');
+};
 
-/*
-burgerCardAll.forEach((burgerCard) => {
-  burgerCard.addEventListener("click", attachEvent);
-});
-*/
-
-//for(var i = 0; i < burgerCardAll.length; i++) {
-//  burgerCardAll[i].addEventListener('click', () => {
-//    const li =  makeBuy();
-//    Cart.appendChild(li);
-//  });
-//}
-
-
-
-
-/*
-// 장바구니 초기화
-function initCart({totalBurger, price}){
-  totalBurger = 0;
-  price.innerText=0;
-}
-
-// event 생성
-function attachEvent({ burger, totalBurger, price, cancle }) {
-  answer.addEventListener('click', (e) => {
-    if (e.target instanceof HTMLElement) {
-      const currentPick = e.target.innerText;
-      // const realAnswer = quizList[currentStep].answer;
-      console.log(currentPick);
-      console.log(burger);
-
-    }
-  });
-
-    
-}*/
+// 장바구니 비우기
+function CartCancle(){
+  document.querySelectorAll('.row.data').forEach(function (item) {
+      item.remove();
+    });
+  
+    this.totalCount = 0;
+    this.totalPrice = 0;
+    this.reCalc();
+    this.updateUI();
+};

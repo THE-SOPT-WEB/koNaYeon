@@ -120,7 +120,7 @@
               <input type="button" value=" ∨ " onclick="del();">
               <input type="text" name="sum" size="5" readonly>
               
-              <button class="cancle">X</button>
+              
             </form>
           </section>
           <br><hr><br>
@@ -136,9 +136,16 @@
           </div>
         </section>
       </aside>
-
-
     </main>
+    <div class="modal hide">
+      <div class="modal__content">
+        <p class="modal__body"></p>
+        <div class="modal__footer">
+					<a class="modalYes" id="modalY" href="./end.html">예</a>
+					<button class="modalNo" type="button" data-dismiss="modal">아니요</button>
+				</div>
+      </div>
+    </div>
   </body>
 </html>
 
