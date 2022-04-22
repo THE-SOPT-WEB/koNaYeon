@@ -133,6 +133,11 @@ hr{
   height: 2px;
 }
 
+section.cart__content {
+  font-size:larger;
+  font-weight: bold;
+}
+
 
 /* 미디어 쿼리 */
 

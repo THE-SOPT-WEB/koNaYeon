@@ -13,6 +13,8 @@
       <h1>🍔 햄식이를 도와줘 🍔</h1>
     </header>
     <main>
+
+      <!--다른거 먹자-->
       <aside class="sideBar">
         <section class="sideBar_content">
           <h3 class="sideBar__option">다른거 먹자</h3>
@@ -20,11 +22,13 @@
           <p class="burgerking">버거킹</p>
         </section>
       </aside>
+
+      <!--버거 메뉴-->
       <section class="burger">
         <article class="burger__card">
           <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
           <div class="burger__content">
-            <h3 class="burger__name">빅맥</h3>
+            <h3><span class="burger__name">빅맥</span></h3>
             <div class="burger__price">5,400원</div>
             <p class="burger__desc">얼마나 맛있게요?</p>
           </div>
@@ -32,7 +36,7 @@
         <article class="burger__card">
           <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
           <div class="burger__content">
-            <h3 class="burger__name">슈슈버거</h3>
+            <h3><span class="burger__name">슈슈버거</span></h3>
             <div class="burger__price">5,300원</div>
             <p class="burger__desc">얼마나 맛있게요?</p>
           </div>
@@ -40,7 +44,7 @@
         <article class="burger__card">
           <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
           <div class="burger__content">
-            <h3 class="burger__name">맥치킨</h3>
+            <h3><span class="burger__name">맥치킨</span></h3>
             <div class="burger__price">4,100원</div>
             <p class="burger__desc">얼마나 맛있게요?</p>
           </div>
@@ -48,7 +52,7 @@
         <article class="burger__card">
           <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
           <div class="burger__content">
-            <h3 class="burger__name">상하이</h3>
+            <h3><span class="burger__name">상하이</span></h3>
             <div class="burger__price">5,600원</div>
             <p class="burger__desc">얼마나 맛있게요?</p>
           </div>
@@ -56,7 +60,7 @@
         <article class="burger__card">
           <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
           <div class="burger__content">
-            <h3 class="burger__name">1955</h3>
+            <h3><span class="burger__name">1955</span></h3>
             <div class="burger__price">6,500원</div>
             <p class="burger__desc">얼마나 맛있게요?</p>
           </div>
@@ -64,7 +68,7 @@
         <article class="burger__card">
           <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
           <div class="burger__content">
-            <h3 class="burger__name">불고기</h3>
+            <h3><span class="burger__name">불고기</span></h3>
             <div class="burger__price">3,100원</div>
             <p class="burger__desc">얼마나 맛있게요?</p>
           </div>
@@ -72,7 +76,7 @@
         <article class="burger__card">
           <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
           <div class="burger__content">
-            <h3 class="burger__name">더블불고기</h3>
+            <h3><span class="burger__name">더블불고기</span></h3>
             <div class="burger__price">5,200원</div>
             <p class="burger__desc">얼마나 맛있게요?</p>
           </div>
@@ -80,7 +84,7 @@
         <article class="burger__card">
           <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
           <div class="burger__content">
-            <h3 class="burger__name">슈비버거</h3>
+            <h3><span class="burger__name">슈비버거</span></h3>
             <div class="burger__price">6,300원</div>
             <p class="burger__desc">얼마나 맛있게요?</p>
           </div>
@@ -88,7 +92,7 @@
         <article class="burger__card">
           <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
           <div class="burger__content">
-            <h3 class="burger__name">햄버거</h3>
+            <h3><span class="burger__name">햄버거</span></h3>
             <div class="burger__price">2,800원</div>
             <p class="burger__desc">얼마나 맛있게요?</p>
           </div>
@@ -96,19 +100,34 @@
         <article class="burger__card">
           <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
           <div class="burger__content">
-            <h3 class="burger__name">치즈버거</h3>
+            <h3><span class="burger__name">치즈버거</span></h3>
             <div class="burger__price">3,100원</div>
             <p class="burger__desc">얼마나 맛있게요?</p>
           </div>
         </article>
       </section>
+
+      <!--장바구니-->
       <aside class="cart">
         <section class="cart__content">
-          <h3>장바구니</h3>
-          <br><br>
-          <hr><br>
-          <h3>누적금액</h3>
-          <p>0원</p>
+          <section class="cart__shopping">장바구니
+            <br>
+            
+            <form name="form" method="get" hide>
+              <input type=hidden name="sell_price" value="80000">
+              <input type="text" name="amount" value="1" size="2" onchange="change();">
+              <input type="button" value=" ∧ " onclick="add();">
+              <input type="button" value=" ∨ " onclick="del();">
+              <input type="text" name="sum" size="5" readonly>
+              
+              <button class="cancle">X</button>
+            </form>
+          </section>
+          <br><hr><br>
+          <section class="cart__money">누적금액<br>
+            <span class="cart__moneyTotal">0</span>
+            <span>원</span>
+          </section>
           <br>
           <hr>
           <div class="cart__execution">
@@ -117,6 +136,8 @@
           </div>
         </section>
       </aside>
+
+
     </main>
   </body>
 </html>
