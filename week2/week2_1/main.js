@@ -62,10 +62,10 @@ function goNextStep(score, image) {
     1. 점수 올리기
     2. 이미지 바꿔주기
   */
- 
+  
   currentStep++;
   score.innerText = +score.innerText + 1;
- 
+  
   if (currentStep === quizList.length) {
     // 게임이 끝난 상태
     showModal(`
@@ -126,3 +126,5 @@ window.onload = () => {
     replay: $('.buttonList__shuffle'),
   });
 }
+
+

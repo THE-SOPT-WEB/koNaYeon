@@ -2,15 +2,21 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  }
+
+body {
+  background-color: #FEFFF8;
 }
+
 
 button {
   background-color: transparent;
   border: none;
   border-radius: 8px;
-  background-color: #bc9bfd;
+  background-color: #AAE1BF; /*#B9CCDB*/
   padding: 5px 10px;
-  color: white;
+  color: darkgreen;
+  font-weight: bold;
 }
 
 button:hover {
@@ -29,9 +35,10 @@ a {
 header {
   text-align: center;
   color: white;
+  font-weight: bold;
   padding: 5px 10px;
   margin-bottom: 15px;
-  background-color: #8040ff;
+  background-color: #246a7f;
 }
 
 header > h1 {
@@ -53,12 +60,12 @@ section.scoreBoard {
   width: 100%;
   text-align: center;
 
-  color: white;
-  background-color: #bc9bfd;
+  color: black;
+  background-color: #7EC5D5;
   padding: 10px;
 }
 
-section.scoreBoard.scored {
+section.scoreBoard.score {
   animation: score 0.5s ease-in-out infinite;
   color: rgb(255, 0, 0);
 }
@@ -74,7 +81,7 @@ div.imageBoard > img {
   width: 100%;
   max-height: 100%;
   border-radius: 18px;
-  border: 1px solid #8040ff;
+  border: 3px solid gray;
 }
 
 .modal.hide {
@@ -99,7 +106,8 @@ div.imageBoard > img {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background-color: white;
+  font-weight: bold;
+  background-color: #7EC5D5;
   border-radius: 18px;
   padding: 15px;
 
@@ -126,9 +134,10 @@ div.imageBoard > img {
   border-radius: 34px;
 
   font-size: 14px;
-  color: white;
+  color: black;
+  font-weight: bold;
 
-  background-color: #f88dd8;
+  background-color: #F2E2A9;
 
   list-style: none;
 }
