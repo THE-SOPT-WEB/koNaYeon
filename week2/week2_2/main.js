@@ -4,8 +4,12 @@ const $ = (selector) => document.querySelector(selector);
 
 const Cart =  $ ('section.cart__shopping'); // 장바구니 title
 const burgerCardAll = document.querySelectorAll('article.burger__card'); //버거 카드
-const order = $ ('button.cart__order');
-const cancle = $ ('button.cart__cancle');
+const order = $ ('button.cart__order'); // 주문하기 버튼
+const cancle = $ ('button.cart__cancle'); // 취소하기 버튼
+const totalPrice = $ ('cart__moneyTotal');
+let totalCount = 0; // 수량
+let sum = 0; // 누적 금액
+
 
 
 burgerCardAll.forEach(function(e) {
@@ -36,6 +40,18 @@ function logEvent(event) {
   const div = document.createElement("div");
   div.innerText = price;
 
+  // '5,500원' => 5500
+  const parsePriceToNumber = (price) => {
+    const removedComma = price.slice(0, -1).replace(/\D/g, "");
+    return +removedComma;
+  };
+
+  sum = +sum + parsePriceToNumber(div.innerText);
+  console.log(sum);
+
+
+
+
   const button = document.createElement("button");
   
 
@@ -43,6 +59,8 @@ function logEvent(event) {
   button.innerText = "X";
   button.onclick = () => {
     li.remove();
+    sum = sum - parsePriceToNumber(div.innerText);
+    console.log(sum);
   }
 
 
@@ -50,11 +68,13 @@ function logEvent(event) {
   li.appendChild(span);
   li.appendChild(div);
   li.appendChild(button);
+  
   Cart.appendChild(li);
   console.log(Cart);
   
 };
 
+// 모달창
 function showModal(modalContent, keepOpen) {
   const modal = $('.modal');
   const modalBody = $('p.modal__body');
@@ -62,22 +82,14 @@ function showModal(modalContent, keepOpen) {
   modalBody.innerHTML = modalContent;
 
   modal.classList.remove('hide');
-  //`**예**`를 누르면 `**a**` 태그를 사용해서 완료 페이지로 이동해주세요. 
-  // `**아니오**`를 누르면 모달을 다시 닫아주세요.
   modalButton.onclick = () => {
     modal.classList.add('hide');
   }
-  /*if (keepOpen) return;
-  
-  setTimeout(() => {
-    modal.classList.add('hide');
-  }, 1000);
-  */
 }
 
 // 주문하기
 order.onclick = function (event) {
-  showModal('🍔 정말 주문하시겠어요? 🍔');
+  showModal('🍔 정말 주문하시겠어요? 🍔' + '총 누적금액 :'+ sum +'원');
 };
 
 // 장바구니 비우기
@@ -91,3 +103,6 @@ function CartCancle(){
     this.reCalc();
     this.updateUI();
 };
+
+
+

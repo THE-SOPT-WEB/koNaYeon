@@ -138,6 +138,10 @@ section.cart__content {
   font-weight: bold;
 }
 
+li {
+  list-style:none;
+  padding-left:0px;
+}
 
 /* 모달 띄우기 */
 
@@ -198,6 +202,7 @@ section.cart__content {
   font-size: 15px;
 
 }
+
 
 /* 미디어 쿼리 */
 
