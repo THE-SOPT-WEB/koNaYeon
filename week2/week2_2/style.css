@@ -172,6 +172,32 @@ section.cart__content {
   flex-direction: column;
   gap: 15px;
 }
+.modal__footer {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  
+}
+.modalYes {
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: rgb(239, 95, 95);
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+
+}
+.modalNo {
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: rgb(239, 95, 95);
+  color: white;
+  border:0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 15px;
+
+}
 
 /* 미디어 쿼리 */
 
