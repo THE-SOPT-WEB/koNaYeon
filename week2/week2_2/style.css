@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+}
+
+aside.sideBar {
+  flex: 1;
+}
+
+section.burger {
+  flex: 3;
+}
+
+aside.cart {
+  flex: 1.5;
+}
+
+/* menubar */
+header {
+  background-color: lightcoral;
+  margin-bottom: 20px;
+  padding: 10px 0px;
+}
+
+header > h1 {
+  text-align: center;
+}
+
+
+/* 다른거 먹자 */
+
+aside.sideBar {
+  margin: 0px 30px;
+  width: 100%;
+}
+
+section.sideBar_content {
+  background-color: pink;
+  border-radius: 8px;
+  padding: 15px;
+  width: 80%;
+}
+
+h3.sideBar__option {
+  margin-bottom: 20px;
+}
+
+section.sideBar_content > p {
+  display: block;
+  margin: 10px 0px;
+  padding: 5px 10px;
+  font-size: small;
+  font-weight: bolder;
+  border-radius: 8px;
+}
+
+p.mcdonalds {
+  background-color: lightcoral;
+}
+
+p.burgerking {
+  background-color: antiquewhite;
+}
+
+
+
+/* 햄버거 메뉴 */
+
+section.burger {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* 줄바꿈 */
+  gap: 20px;
+}
+
+article.burger__card {
+  display: flex;
+  background-color: white;
+  border: 2px solid lightgray;
+  border-radius: 8px;
+  width: 45%;
+  box-shadow: 5px 5px 5px lightgray;
+  margin-bottom: 20px;
+}
+
+article.burger__card:hover {
+  background-color: rgb(239, 95, 95);
+  color: whitesmoke;
+}
+
+article.burger__card > img {
+  width: 150px;
+}
+
+article.burger__card > div {
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+/* 장바구니 */
+
+section.cart__content {
+  padding: 15px;
+  background-color: pink;
+  border-radius: 8px;
+  position: fixed;
+  width: 350px;
+}
+
+div.cart__execution {
+  text-align: center;
+  margin-top: 15px;
+}
+
+div.cart__execution > button {
+  background-color: antiquewhite;
+  border-radius: 15px;
+  padding: 5px 10px;
+  border: none;
+  font-weight: bolder;
+  color: dimgrey;
+}
+
+hr{
+  background-color: white;
+  border: none;
+  height: 2px;
+}
+
+section.cart__content {
+  font-size:larger;
+  font-weight: bold;
+}
+
+li {
+  list-style:none;
+  padding-left:0px;
+}
+
+/* 모달 띄우기 */
+
+.modal.hide {
+  display: none;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__content {
+  width: fit-content;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-weight: bold;
+  background-color: pink;
+  border-radius: 18px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.modal__footer {
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  
+}
+.modalYes {
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: rgb(239, 95, 95);
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+
+}
+.modalNo {
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: rgb(239, 95, 95);
+  color: white;
+  border:0;
+  outline: 0;
+  font-weight: bold;
+  font-size: 15px;
+
+}
+
+
+/* 미디어 쿼리 */
+
+@media all and (max-width: 1024px){
+	section.sideBar_content > p {
+    width: 40px;
+  }
+}
+@media all and (max-width: 768px){
+  
+	article.burger__card{
+    width: 100%;
+  }
+}

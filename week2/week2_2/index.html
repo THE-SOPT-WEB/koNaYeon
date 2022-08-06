@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>햄식이의 장바구니</title>
+  </head>
+  <body>
+    <script type="module" src="/main.js"></script>
+    <header>
+      <h1>🍔 햄식이를 도와줘 🍔</h1>
+    </header>
+    <main>
+
+      <!--다른거 먹자-->
+      <aside class="sideBar">
+        <section class="sideBar_content">
+          <h3 class="sideBar__option">다른거 먹자</h3>
+          <p class="mcdonalds">맥도날드</p>
+          <p class="burgerking">버거킹</p>
+        </section>
+      </aside>
+
+      <!--버거 메뉴-->
+      <section class="burger">
+        <article class="burger__card">
+          <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
+          <div class="burger__content">
+            <h3><span class="burger__name">빅맥</span></h3>
+            <div class="burger__price">5,400원</div>
+            <p class="burger__desc">얼마나 맛있게요?</p>
+          </div>
+        </article>
+        <article class="burger__card">
+          <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
+          <div class="burger__content">
+            <h3><span class="burger__name">슈슈버거</span></h3>
+            <div class="burger__price">5,300원</div>
+            <p class="burger__desc">얼마나 맛있게요?</p>
+          </div>
+        </article>
+        <article class="burger__card">
+          <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
+          <div class="burger__content">
+            <h3><span class="burger__name">맥치킨</span></h3>
+            <div class="burger__price">4,100원</div>
+            <p class="burger__desc">얼마나 맛있게요?</p>
+          </div>
+        </article>
+        <article class="burger__card">
+          <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
+          <div class="burger__content">
+            <h3><span class="burger__name">상하이</span></h3>
+            <div class="burger__price">5,600원</div>
+            <p class="burger__desc">얼마나 맛있게요?</p>
+          </div>
+        </article>
+        <article class="burger__card">
+          <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
+          <div class="burger__content">
+            <h3><span class="burger__name">1955</span></h3>
+            <div class="burger__price">6,500원</div>
+            <p class="burger__desc">얼마나 맛있게요?</p>
+          </div>
+        </article>
+        <article class="burger__card">
+          <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
+          <div class="burger__content">
+            <h3><span class="burger__name">불고기</span></h3>
+            <div class="burger__price">3,100원</div>
+            <p class="burger__desc">얼마나 맛있게요?</p>
+          </div>
+        </article>
+        <article class="burger__card">
+          <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
+          <div class="burger__content">
+            <h3><span class="burger__name">더블불고기</span></h3>
+            <div class="burger__price">5,200원</div>
+            <p class="burger__desc">얼마나 맛있게요?</p>
+          </div>
+        </article>
+        <article class="burger__card">
+          <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
+          <div class="burger__content">
+            <h3><span class="burger__name">슈비버거</span></h3>
+            <div class="burger__price">6,300원</div>
+            <p class="burger__desc">얼마나 맛있게요?</p>
+          </div>
+        </article>
+        <article class="burger__card">
+          <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
+          <div class="burger__content">
+            <h3><span class="burger__name">햄버거</span></h3>
+            <div class="burger__price">2,800원</div>
+            <p class="burger__desc">얼마나 맛있게요?</p>
+          </div>
+        </article>
+        <article class="burger__card">
+          <img src="https://www.mcdelivery.co.kr/kr//static/1648609546423/assets/82/products/1301.png?" alt="bigmac">
+          <div class="burger__content">
+            <h3><span class="burger__name">치즈버거</span></h3>
+            <div class="burger__price">3,100원</div>
+            <p class="burger__desc">얼마나 맛있게요?</p>
+          </div>
+        </article>
+      </section>
+
+      <!--장바구니-->
+      <aside class="cart">
+        <section class="cart__content">
+          <section class="cart__shopping">장바구니
+            <br>
+            <!--
+            <form name="form" method="get" hide>
+              <input type=hidden name="sell_price" value="80000">
+              <input type="text" name="amount" value="1" size="2" onchange="change();">
+              <input type="button" value=" ∧ " onclick="add();">
+              <input type="button" value=" ∨ " onclick="del();">
+              <input type="text" name="sum" size="5" readonly>
+            </form>
+            -->
+          </section>
+          <br><hr><br>
+          <section class="cart__money">누적금액<br>
+            <span class="cart__moneyTotal">0</span>
+            <span>원</span>
+          </section>
+          <br>
+          <hr>
+          <div class="cart__execution">
+            <button class="cart__order">주문하기</button>
+            <button class="cart__cancle">취소하기</button>  
+          </div>
+        </section>
+      </aside>
+    </main>
+    <div class="modal hide">
+      <div class="modal__content">
+        <p class="modal__body"></p>
+        <div class="modal__footer">
+					<a class="modalYes" id="modalY" href="./end.html">예</a>
+					<button class="modalNo" type="button" data-dismiss="modal">아니요</button>
+				</div>
+      </div>
+    </div>
+  </body>
+</html>
+
